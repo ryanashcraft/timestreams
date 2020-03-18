@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Follow, Stream, User } from '../types'
+import { Stream, User } from '../types'
 
 export type State = {
     follows: User[]

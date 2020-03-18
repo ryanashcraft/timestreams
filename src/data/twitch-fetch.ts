@@ -3,7 +3,7 @@ const getAccessToken = (): string | null => {
         .slice(1)
         .split('&')
         .map(pairString => pairString.split('='))
-        .find(pair => pair[0] == 'access_token')
+        .find(pair => pair[0] === 'access_token')
 
     return pair ? pair[1] : null
 }

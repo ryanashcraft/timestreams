@@ -25,6 +25,7 @@ export const Sidebar = () => {
                             <img
                                 className="Sidebar-profileimage"
                                 src={user.profile_image_url}
+                                alt=""
                                 width={30}
                                 height={30}
                             />

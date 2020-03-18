@@ -21,6 +21,7 @@ export const StreamCard = (props: Props) => {
                     src={props.stream.thumbnail_url
                         .replace('{width}', `${320 * 2}`)
                         .replace('{height}', `${180 * 2}`)}
+                    alt=""
                 />
                 <div className="StreamCard-viewercount">
                     {formatCompact(props.stream.viewer_count)} Viewers
