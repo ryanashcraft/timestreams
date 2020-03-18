@@ -14,7 +14,7 @@ export const LoginForm = () => {
                 <input
                     type="hidden"
                     name="redirect_uri"
-                    value="http://localhost:3001"
+                    value={`${window.location.protocol}//${window.location.host}`}
                 />
                 <input type="hidden" name="response_type" value="token" />
                 <input
