@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React from 'react'
 
 import { getUserFollows } from '../data/get-user-follows'
 import { getUserId } from '../data/get-user-id'
