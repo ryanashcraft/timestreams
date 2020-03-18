@@ -22,7 +22,7 @@ export const Spinner = () => {
                     <div
                         key={i}
                         className="Spinner-dot"
-                        style={{ opacity: counter % 3 == i ? 1 : 0.5 }}
+                        style={{ opacity: counter % 3 === i ? 1 : 0.5 }}
                     ></div>
                 )
             })}
