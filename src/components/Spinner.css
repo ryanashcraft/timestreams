@@ -1,0 +1,21 @@
+.Spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+.Spinner-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+
+    transition: 200ms linear opacity;
+    margin-right: 4px;
+}
+
+.Spinner-dot:last-child {
+    margin-right: 0;
+}
