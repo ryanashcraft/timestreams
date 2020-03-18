@@ -1,0 +1,21 @@
+.LoginForm {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginForm-button {
+    background-color: var(--color-indigo);
+    color: var(--color-white);
+    border: 0;
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    border-radius: 2px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    cursor: pointer;
+}
+
+.LoginForm-button:hover {
+    background-color: var(--color-indigo-secondary);
+}

@@ -1,0 +1,14 @@
+.Home {
+    padding-left: var(--sidebar-width);
+}
+
+.Home-grid {
+    display: grid;
+    justify-content: center;
+    overflow: hidden;
+
+    padding: var(--spacing-lg);
+
+    grid-template-columns: repeat(auto-fill, 320px);
+    grid-gap: var(--spacing-lg);
+}
