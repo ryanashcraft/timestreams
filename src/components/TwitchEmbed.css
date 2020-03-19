@@ -1,0 +1,16 @@
+.TwitchEmbed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 350px;
+    height: 100%;
+}
+
+.TwitchEmbed-Chat {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    background-color: var(--color-background);
+    border-left: 1px solid var(--color-background-tertiary);
+}

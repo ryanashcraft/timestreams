@@ -27,10 +27,10 @@ export const Header = () => {
             <Sticky>
                 {({ style }) => (
                     <div className="Header-list" style={style}>
-                        {links.map(link => {
+                        {links.map((link, i) => {
                             return (
                                 <a
-                                    key={link.href}
+                                    key={i}
                                     className={cx(
                                         'Header-listitem',
                                         link.isActive && 'Header-linkactive'

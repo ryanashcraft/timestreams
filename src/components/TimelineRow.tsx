@@ -1,10 +1,11 @@
 import React from 'react'
 import { formatDistanceToNow } from 'date-fns'
 
+import { TwitchEmbed } from './TwitchEmbed'
+import { Modal } from './Modal'
 import { User, Video } from '../types'
-
-import './TimelineRow.css'
 import { formatCompact } from '../loc'
+import './TimelineRow.css'
 
 type Props = {
     user: User
@@ -12,8 +13,23 @@ type Props = {
 }
 
 export const TimelineRow = (props: Props) => {
+    const [isModalOpen, setIsModalOpen] = React.useState(false)
+
     return (
-        <a href={props.video.url} className="TimelineRow">
+        <div onClick={() => setIsModalOpen(true)} className="TimelineRow">
+            <Modal
+                isOpen={isModalOpen}
+                shouldCloseOnOverlayClick={true}
+                onRequestClose={e => {
+                    e.stopPropagation()
+                    setIsModalOpen(false)
+                }}
+            >
+                <TwitchEmbed
+                    channel={props.user.login}
+                    onBackgroundClick={() => setIsModalOpen(false)}
+                />
+            </Modal>
             <img
                 className="TimelineRow-profileimage"
                 src={props.user.profile_image_url}
@@ -45,6 +61,6 @@ export const TimelineRow = (props: Props) => {
                     {formatCompact(props.video.view_count)} Views
                 </div>
             </div>
-        </a>
+        </div>
     )
 }

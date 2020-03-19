@@ -1,0 +1,27 @@
+.Modal-button {
+    position: fixed;
+    top: var(--spacing-lg);
+    left: var(--spacing-lg);
+
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--color-white);
+    fill: var(--color-white);
+    border: 0;
+
+    width: 32px;
+    height: 32px;
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.Modal-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.Modal-button:focus {
+    outline: 0;
+}

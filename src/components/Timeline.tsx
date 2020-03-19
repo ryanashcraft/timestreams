@@ -16,7 +16,9 @@ export const Timeline = () => {
                 )
 
                 if (user) {
-                    return <TimelineRow user={user} video={video} />
+                    return (
+                        <TimelineRow key={video.id} user={user} video={video} />
+                    )
                 } else {
                     return null
                 }
