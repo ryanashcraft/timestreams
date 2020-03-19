@@ -1,12 +1,4 @@
-const getAccessToken = (): string | null => {
-    let pair = window.location.hash
-        .slice(1)
-        .split('&')
-        .map(pairString => pairString.split('='))
-        .find(pair => pair[0] === 'access_token')
-
-    return pair ? pair[1] : null
-}
+import { getAccessToken } from './access-token'
 
 export const twitchFetch = (path: string): Promise<any> => {
     return fetch(`https://api.twitch.tv${path}`, {

@@ -1,6 +1,7 @@
 import React from 'react'
 import { StickyContainer, Sticky } from 'react-sticky'
 
+import { getAccessToken } from '../data/access-token'
 import { getUserFollows } from '../data/get-user-follows'
 import { getUserId } from '../data/get-user-id'
 import { getStream } from '../data/get-stream'
@@ -15,12 +16,17 @@ import { getUser } from '../data/get-user'
 import './Home.css'
 
 export const Home = () => {
+    const hasAccessToken = !!getAccessToken()
     const [state, dispatch] = React.useReducer(
         appState.reducer,
         appState.initialState
     )
 
     React.useEffect(() => {
+        if (!hasAccessToken) {
+            return
+        }
+
         getUserId().then(userId => {
             getUserFollows(userId)
                 .then(follows => {
@@ -60,7 +66,7 @@ export const Home = () => {
                     alert('Something went wrong. Please try again.')
                 })
         })
-    }, [])
+    }, [hasAccessToken])
 
     return (
         <appState.context.Provider value={state}>

@@ -1,6 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import { Sticky } from 'react-sticky'
+import { Link } from '@reach/router'
 
 import { ReactComponent as HomeIcon } from '@fortawesome/fontawesome-free/svgs/solid/home.svg'
 import { ReactComponent as GamePad } from '@fortawesome/fontawesome-free/svgs/solid/gamepad.svg'
@@ -9,13 +10,12 @@ import './Header.css'
 
 let links = [
     {
-        href: '#',
+        href: '/home',
         labelText: 'Home',
         iconClass: HomeIcon,
-        isActive: true,
     },
     {
-        href: '#',
+        href: '/games',
         labelText: 'Games',
         iconClass: GamePad,
     },
@@ -29,13 +29,16 @@ export const Header = () => {
                     <div className="Header-list" style={style}>
                         {links.map((link, i) => {
                             return (
-                                <a
+                                <Link
                                     key={i}
-                                    className={cx(
-                                        'Header-listitem',
-                                        link.isActive && 'Header-linkactive'
-                                    )}
-                                    href={link.href}
+                                    getProps={({ isPartiallyCurrent }) => ({
+                                        className: cx(
+                                            'Header-listitem',
+                                            isPartiallyCurrent &&
+                                                'Header-linkactive'
+                                        ),
+                                    })}
+                                    to={link.href}
                                 >
                                     <div className="Header-listitemcontents">
                                         <link.iconClass
@@ -44,7 +47,7 @@ export const Header = () => {
                                         />
                                         {link.labelText}
                                     </div>
-                                </a>
+                                </Link>
                             )
                         })}
                     </div>

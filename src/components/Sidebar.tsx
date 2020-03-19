@@ -42,6 +42,10 @@ export const Sidebar = () => {
                                 })}
                             </div>
                         )}
+                        <div className="Sidebar-meta">
+                            Made by{' '}
+                            <a href="https://ryanashcraft.me">Ryan Ashcraft</a>
+                        </div>
                     </div>
                 )}
             </Sticky>

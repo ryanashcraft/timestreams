@@ -29,6 +29,7 @@
 .Header-linkactive {
     color: var(--color-indigo);
     fill: var(--color-indigo);
+    text-decoration: none;
 }
 
 .Header-listitemicon {

@@ -91,3 +91,9 @@
     border-radius: 50%;
     margin-right: var(--spacing-sm);
 }
+
+.Sidebar-meta {
+    font-size: var(--font-size-sm);
+    color: var(--color-secondary);
+    margin: var(--spacing-md);
+}
