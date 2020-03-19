@@ -19,7 +19,7 @@ export const Sidebar = () => {
             <Sticky>
                 {({ style }) => (
                     <div className="Sidebar-list" style={style}>
-                        {!state.isReady ? (
+                        {!state.hasLoadedHomeContent ? (
                             <div className="Sidebar-section">
                                 <Spinner />
                             </div>

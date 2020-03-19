@@ -1,3 +1,5 @@
+import { string } from 'prop-types'
+
 export type Follow = {
     from_id: string
     from_name: string
@@ -50,4 +52,9 @@ export type Video = {
     user_name: string
     view_count: number
     viewable: string
+}
+export type Game = {
+    box_art_url: string
+    id: string
+    name: string
 }

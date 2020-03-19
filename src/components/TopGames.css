@@ -1,0 +1,27 @@
+.TopGames-row {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: 100ms ease-in background-color;
+    border-bottom: 1px solid var(--color-background-tertiary);
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.TopGames-row:hover {
+    background-color: var(--color-background-secondary);
+    text-decoration: none;
+}
+
+.TopGames-boxart {
+    margin-right: var(--spacing-md);
+}
+
+.TopGames-gamename {
+    font-size: var(--font-size-md);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 800;
+    color: var(--color-primary);
+}

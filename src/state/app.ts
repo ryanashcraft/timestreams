@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Stream, User, Video } from '../types'
+import { Game, Stream, User, Video } from '../types'
 import { subDays } from 'date-fns'
 
 export type State = {
@@ -11,7 +11,9 @@ export type State = {
     videosByUserId: {
         [id: string]: Video[]
     }
-    isReady: boolean
+    topGames: Game[]
+    hasLoadedHomeContent: boolean
+    hasLoadedGamesContent: boolean
 }
 
 type SetFollowsAction = {
@@ -31,17 +33,34 @@ type SetVideosAction = {
     videos: Video[]
 }
 
-type ReadyAction = {
-    type: 'READY'
+type SetTopGamesAction = {
+    type: 'SET_TOP_GAMES'
+    games: Game[]
 }
 
-type Action = SetFollowsAction | SetStreamAction | SetVideosAction | ReadyAction
+type HomeReadyAction = {
+    type: 'HOME_READY'
+}
+
+type GamesReadyAction = {
+    type: 'GAMES_READY'
+}
+
+type Action =
+    | SetFollowsAction
+    | SetStreamAction
+    | SetVideosAction
+    | HomeReadyAction
+    | GamesReadyAction
+    | SetTopGamesAction
 
 export const initialState = {
     follows: [],
     streamsByUserId: {},
     videosByUserId: {},
-    isReady: false,
+    topGames: [],
+    hasLoadedHomeContent: false,
+    hasLoadedGamesContent: false,
 }
 
 export const reducer = (state: State, action: Action) => {
@@ -67,10 +86,20 @@ export const reducer = (state: State, action: Action) => {
                     [action.userId]: action.videos,
                 },
             }
-        case 'READY':
+        case 'HOME_READY':
             return {
                 ...state,
-                isReady: true,
+                hasLoadedHomeContent: true,
+            }
+        case 'SET_TOP_GAMES':
+            return {
+                ...state,
+                topGames: action.games,
+            }
+        case 'GAMES_READY':
+            return {
+                ...state,
+                hasLoadedGamesContent: true,
             }
         default:
             return state
