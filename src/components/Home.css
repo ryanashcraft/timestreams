@@ -16,9 +16,13 @@
     overflow: hidden;
 }
 
-.Home-header {
+.Home-title {
+    background-color: var(--color-background);
     font-size: var(--font-size-lg);
     font-weight: 800;
     border-bottom: 1px solid var(--color-background-tertiary);
+}
+
+.Home-titlecontents {
     padding: var(--spacing-lg);
 }

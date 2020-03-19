@@ -2,14 +2,13 @@
     overflow: hidden;
     border-right: 1px solid var(--color-background-tertiary);
     box-sizing: border-box;
-    padding: var(--spacing-md) 0;
 }
 
 .Header-list {
     overflow: hidden;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: var(--spacing-md) 0;
 }
 
 .Header-listitem {
@@ -19,10 +18,26 @@
     overflow: hidden;
     font-size: var(--font-size-lg);
     font-weight: 700;
+    color: var(--color-primary);
+    fill: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+
+    transition: ease-in 100ms all;
+}
+
+.Header-listitem:hover,
+.Header-linkactive {
     color: var(--color-indigo);
+    fill: var(--color-indigo);
+}
+
+.Header-listitemicon {
+    margin-right: var(--spacing-lg);
 }
 
 .Header-listitemcontents {
+    display: flex;
+    align-items: center;
     border-radius: calc(var(--spacing-md) * 2);
     padding: var(--spacing-md) var(--spacing-lg);
     transition: ease-in 100ms background-color;

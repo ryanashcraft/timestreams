@@ -1,4 +1,5 @@
 import React from 'react'
+import { StickyContainer, Sticky } from 'react-sticky'
 
 import { getUserFollows } from '../data/get-user-follows'
 import { getUserId } from '../data/get-user-id'
@@ -63,14 +64,22 @@ export const Home = () => {
 
     return (
         <appState.context.Provider value={state}>
-            <div className="Home">
+            <StickyContainer className="Home">
                 <Header />
                 <div className="Home-timeline">
-                    <div className="Home-header">Latest VODs</div>
+                    <Sticky>
+                        {({ style }) => (
+                            <div className="Home-title" style={style}>
+                                <div className="Home-titlecontents">
+                                    Latest Videos
+                                </div>
+                            </div>
+                        )}
+                    </Sticky>
                     {!state.isReady ? <Spinner /> : <Timeline />}
                 </div>
                 <Sidebar />
-            </div>
+            </StickyContainer>
         </appState.context.Provider>
     )
 }
