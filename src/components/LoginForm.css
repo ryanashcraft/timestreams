@@ -19,6 +19,11 @@
     transition: 100ms ease-in background-color;
 }
 
+.LoginForm-button:focus {
+    background-color: var(--color-indigo-secondary);
+    outline: 0;
+}
+
 .LoginForm-button:hover {
     background-color: var(--color-indigo-secondary);
 }

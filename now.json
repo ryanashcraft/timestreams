@@ -1,0 +1,7 @@
+{
+    "build": {
+        "env": {
+            "REACT_APP_TWITCH_CLIENT_ID": "@twitch-client-id"
+        }
+    }
+}

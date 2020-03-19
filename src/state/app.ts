@@ -146,7 +146,7 @@ export const getSortedVideos = (state: State): Video[] => {
     videos = videos.filter(video => {
         return (
             new Date(video.published_at).getTime() >
-            subDays(new Date(), 7).getTime()
+                subDays(new Date(), 7).getTime() && !!video.thumbnail_url
         )
     })
 

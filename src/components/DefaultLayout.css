@@ -13,6 +13,7 @@
 
 .DefaultLayout-timeline {
     display: flex;
+    min-height: 100%;
     flex-direction: column;
     border-left: 1px solid var(--color-background-tertiary);
     border-right: 1px solid var(--color-background-tertiary);
