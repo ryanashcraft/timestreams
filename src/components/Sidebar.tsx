@@ -1,9 +1,12 @@
 import React from 'react'
 import { Sticky } from 'react-sticky'
 
+import { TwitchEmbed } from './TwitchEmbed'
+import { Modal } from './Modal'
 import { formatCompact } from '../loc'
 import * as appState from '../state/app'
 import { Spinner } from './Spinner'
+import { User, Stream } from '../types'
 
 import './Sidebar.css'
 
@@ -30,36 +33,11 @@ export const Sidebar = () => {
                                         state.streamsByUserId[user.id]
 
                                     return (
-                                        <a
+                                        <ChannelRow
                                             key={user.id}
-                                            className="Sidebar-listitem"
-                                            href={`https://twitch.tv/${user.login}`}
-                                        >
-                                            <img
-                                                className="Sidebar-profileimage"
-                                                src={user.profile_image_url}
-                                                alt=""
-                                                width={30}
-                                                height={30}
-                                            />
-                                            <div className="Sidebar-streamertext">
-                                                <div className="Sidebar-streamername">
-                                                    {user.display_name}
-                                                </div>
-                                                {!!stream && (
-                                                    <div className="Sidebar-streamtitle">
-                                                        {stream.title}
-                                                    </div>
-                                                )}
-                                            </div>
-                                            {!!stream && (
-                                                <div className="Sidebar-viewercount">
-                                                    {formatCompact(
-                                                        stream.viewer_count
-                                                    )}
-                                                </div>
-                                            )}
-                                        </a>
+                                            user={user}
+                                            stream={stream}
+                                        />
                                     )
                                 })}
                             </div>
@@ -67,6 +45,56 @@ export const Sidebar = () => {
                     </div>
                 )}
             </Sticky>
+        </div>
+    )
+}
+
+type ChannelRowProps = {
+    user: User
+    stream: Stream | null
+}
+
+const ChannelRow = (props: ChannelRowProps) => {
+    const { user, stream } = props
+    const [isModalOpen, setIsModalOpen] = React.useState(false)
+
+    return (
+        <div
+            key={user.id}
+            className="Sidebar-listitem"
+            onClick={() => setIsModalOpen(true)}
+        >
+            <Modal
+                isOpen={isModalOpen}
+                shouldCloseOnOverlayClick={true}
+                onRequestClose={e => {
+                    e.stopPropagation()
+                    setIsModalOpen(false)
+                }}
+            >
+                <TwitchEmbed
+                    channel={user.login}
+                    onBackgroundClick={() => setIsModalOpen(false)}
+                />
+            </Modal>
+            <img
+                className="Sidebar-profileimage"
+                src={user.profile_image_url}
+                alt=""
+                width={30}
+                height={30}
+            />
+            <div className="Sidebar-streamertext">
+                <div className="Sidebar-streamername">{user.display_name}</div>
+                {!!stream && (
+                    <div className="Sidebar-streamtitle">{stream.title}</div>
+                )}
+            </div>
+            {!!stream && (
+                <div className="Sidebar-viewercount">
+                    {formatCompact(stream.viewer_count)}
+                </div>
+            )}
         </div>
     )
 }

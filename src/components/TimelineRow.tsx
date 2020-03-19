@@ -1,5 +1,6 @@
 import React from 'react'
 import { formatDistanceToNow } from 'date-fns'
+import { ReactComponent as EyeIcon } from '@fortawesome/fontawesome-free/svgs/solid/eye.svg'
 
 import { TwitchEmbed } from './TwitchEmbed'
 import { Modal } from './Modal'
@@ -28,6 +29,7 @@ export const TimelineRow = (props: Props) => {
                 <TwitchEmbed
                     channel={props.user.login}
                     onBackgroundClick={() => setIsModalOpen(false)}
+                    videoId={props.video.id}
                 />
             </Modal>
             <img
@@ -58,7 +60,8 @@ export const TimelineRow = (props: Props) => {
                     />
                 )}
                 <div className="TimelineRow-viewercount">
-                    {formatCompact(props.video.view_count)} Views
+                    <EyeIcon className="TimelineRow-icon" width={16} />{' '}
+                    {formatCompact(props.video.view_count)}
                 </div>
             </div>
         </div>

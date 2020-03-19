@@ -1,4 +1,5 @@
 .TimelineRow {
+    position: relative;
     cursor: pointer;
     display: flex;
     flex-direction: row;
@@ -16,6 +17,7 @@
 .TimelineRow-profileimage {
     width: 50px;
     height: 50px;
+    flex-shrink: 0;
     border-radius: 50px;
     margin-right: var(--spacing-md);
 }
@@ -44,7 +46,16 @@
 }
 
 .TimelineRow-viewercount {
+    display: flex;
+    align-items: center;
     font-size: var(--font-size-md);
-    color: var(--color-secondary);
+    color: var(--color-tertiary);
+    fill: var(--color-tertiary);
     margin-top: var(--spacing-md);
+}
+
+.TimelineRow-icon {
+    position: relative;
+    bottom: -1px;
+    margin-right: var(--spacing-sm);
 }

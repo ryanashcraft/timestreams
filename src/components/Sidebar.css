@@ -25,6 +25,7 @@
 }
 
 .Sidebar-listitem {
+    cursor: pointer;
     text-decoration: none;
     display: flex;
     align-items: center;

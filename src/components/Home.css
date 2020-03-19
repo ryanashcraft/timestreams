@@ -17,6 +17,7 @@
 }
 
 .Home-title {
+    z-index: 2;
     background-color: var(--color-background);
     font-size: var(--font-size-lg);
     font-weight: 800;
