@@ -1,5 +1,9 @@
 .Home {
     min-height: 100%;
+    margin: 0 auto;
+    width: calc(
+        var(--header-width) + var(--timeline-width) + var(--sidebar-width)
+    );
     display: grid;
     grid-template-columns: var(--header-width) var(--timeline-width) var(
             --sidebar-width

@@ -8,7 +8,7 @@ import './Sidebar.css'
 
 export const Sidebar = () => {
     const state = React.useContext(appState.context)
-    const users = appState.getActiveFollowedStreamers(state)
+    const users = appState.getFollowedStreamers(state)
 
     return (
         <div className="Sidebar">

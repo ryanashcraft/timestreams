@@ -19,7 +19,7 @@ export const LoginForm = () => {
                 <input type="hidden" name="response_type" value="token" />
                 <input
                     type="submit"
-                    value="Log In"
+                    value="Log In with Twitch"
                     className="LoginForm-button"
                 />
             </form>

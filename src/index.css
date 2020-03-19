@@ -17,12 +17,15 @@
     --color-background-secondary: rgba(246, 248, 250, 1);
     --color-background-secondary-active: rgba(239, 242, 244, 1);
     --color-background-tertiary: #e7ecf0;
+    --color-background-quarternary: rgba(222, 227, 231, 1);
     --color-white: #fff;
 
     --color-primary: #1f1f23;
     --color-secondary: #53535f;
     --color-shadow: rgba(0, 0, 0, 0.08);
     --color-indigo: #874bf6;
+    --color-indigo-secondary: hsl(263, 64%, 53%);
+    --color-indigo-tertiary: hsl(263, 58%, 43%);
     --color-background-indigo: rgba(102, 56, 240, 0.1);
     --color-red: #e91916;
 }

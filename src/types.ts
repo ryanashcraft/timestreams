@@ -33,3 +33,21 @@ export type User = {
     type: string
     view_count: number
 }
+
+export type Video = {
+    created_at: string
+    description: string
+    duration: string
+    id: string
+    language: string
+    pagination: string
+    published_at: string
+    thumbnail_url: string
+    title: string
+    type: string
+    url: string
+    user_id: string
+    user_name: string
+    view_count: number
+    viewable: string
+}
