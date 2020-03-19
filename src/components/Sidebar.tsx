@@ -1,5 +1,4 @@
 import React from 'react'
-import { Sticky } from 'react-sticky'
 
 import { TwitchEmbed } from './TwitchEmbed'
 import { Modal } from './Modal'
@@ -16,39 +15,31 @@ export const Sidebar = () => {
 
     return (
         <div className="Sidebar">
-            <Sticky>
-                {({ style }) => (
-                    <div className="Sidebar-list" style={style}>
-                        {!state.hasLoadedHomeContent ? (
-                            <div className="Sidebar-section">
-                                <Spinner />
-                            </div>
-                        ) : (
-                            <div className="Sidebar-section">
-                                <div className="Sidebar-title">
-                                    Followed Channels
-                                </div>
-                                {users.slice(0, 5).map(user => {
-                                    const stream =
-                                        state.streamsByUserId[user.id]
+            <div className="Sidebar-list">
+                {!state.hasLoadedHomeContent ? (
+                    <div className="Sidebar-section">
+                        <Spinner />
+                    </div>
+                ) : (
+                    <div className="Sidebar-section">
+                        <div className="Sidebar-title">Followed Channels</div>
+                        {users.slice(0, 5).map(user => {
+                            const stream = state.streamsByUserId[user.id]
 
-                                    return (
-                                        <ChannelRow
-                                            key={user.id}
-                                            user={user}
-                                            stream={stream}
-                                        />
-                                    )
-                                })}
-                            </div>
-                        )}
-                        <div className="Sidebar-meta">
-                            Made by{' '}
-                            <a href="https://ryanashcraft.me">Ryan Ashcraft</a>
-                        </div>
+                            return (
+                                <ChannelRow
+                                    key={user.id}
+                                    user={user}
+                                    stream={stream}
+                                />
+                            )
+                        })}
                     </div>
                 )}
-            </Sticky>
+                <div className="Sidebar-meta">
+                    Made by <a href="https://ryanashcraft.me">Ryan Ashcraft</a>
+                </div>
+            </div>
         </div>
     )
 }

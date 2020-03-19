@@ -5,6 +5,7 @@
         var(--header-width) + var(--timeline-width) + var(--sidebar-width)
     );
     display: grid;
+    align-items: flex-start;
     grid-template-columns: var(--header-width) var(--timeline-width) var(
             --sidebar-width
         );
@@ -13,10 +14,13 @@
 .DefaultLayout-timeline {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    border-left: 1px solid var(--color-background-tertiary);
+    border-right: 1px solid var(--color-background-tertiary);
 }
 
 .DefaultLayout-title {
+    position: sticky;
+    top: 0;
     z-index: 2;
     background-color: var(--color-background);
     font-size: var(--font-size-lg);

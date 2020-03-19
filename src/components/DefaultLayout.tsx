@@ -1,5 +1,4 @@
 import React from 'react'
-import { StickyContainer, Sticky } from 'react-sticky'
 
 import { Header } from '../components/Header'
 import { Sidebar } from '../components/Sidebar'
@@ -12,21 +11,17 @@ type Props = {
 
 export const DefaultLayout = (props: Props) => {
     return (
-        <StickyContainer className="DefaultLayout">
+        <div className="DefaultLayout">
             <Header />
             <div className="DefaultLayout-timeline">
-                <Sticky>
-                    {({ style }) => (
-                        <div className="DefaultLayout-title" style={style}>
-                            <div className="DefaultLayout-titlecontents">
-                                {props.titleText}
-                            </div>
-                        </div>
-                    )}
-                </Sticky>
+                <div className="DefaultLayout-title">
+                    <div className="DefaultLayout-titlecontents">
+                        {props.titleText}
+                    </div>
+                </div>
                 {props.children}
             </div>
             <Sidebar />
-        </StickyContainer>
+        </div>
     )
 }
