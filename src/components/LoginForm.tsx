@@ -10,7 +10,7 @@ export const LoginForm = () => {
 
         if (accessToken) {
             window.localStorage.setItem('access_token', accessToken)
-            redirectTo('/home')
+            window.location.href = '/home'
         }
     }, [])
 
