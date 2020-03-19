@@ -35,6 +35,7 @@ const Row = (props: RowProps) => {
                 src={props.game.box_art_url
                     .replace('{width}', `${122}`)
                     .replace('{height}', `${162}`)}
+                alt=""
                 width={122 / 2}
                 height={162 / 2}
                 className="TopGames-boxart"
