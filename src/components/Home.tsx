@@ -4,10 +4,10 @@ import { getUserFollows } from '../data/get-user-follows'
 import { getUserId } from '../data/get-user-id'
 import { getStream } from '../data/get-stream'
 import * as appState from '../state/app'
+import { Header } from '../components/Header'
 import { Sidebar } from '../components/Sidebar'
 import { Spinner } from '../components/Spinner'
 import { getUser } from '../data/get-user'
-import { StreamCard } from './StreamCard'
 
 import './Home.css'
 
@@ -52,30 +52,14 @@ export const Home = () => {
 
     return (
         <appState.context.Provider value={state}>
-            {state.isReady ? (
-                <>
-                    <Sidebar />
-                    <div className="Home">
-                        <div className="Home-grid">
-                            {appState
-                                .getActiveFollowedStreamers(state)
-                                .map(user => {
-                                    const stream =
-                                        state.streamsByUserId[user.id]
-
-                                    return (
-                                        <StreamCard
-                                            key={user.id}
-                                            stream={stream}
-                                        />
-                                    )
-                                })}
-                        </div>
-                    </div>
-                </>
-            ) : (
-                <Spinner />
-            )}
+            <div className="Home">
+                <Header />
+                <div className="Home-timeline">
+                    <div className="Home-header">Latest VODs</div>
+                    {!state.isReady && <Spinner />}
+                </div>
+                <Sidebar />
+            </div>
         </appState.context.Provider>
     )
 }

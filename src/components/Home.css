@@ -1,14 +1,20 @@
 .Home {
-    padding-left: var(--sidebar-width);
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: var(--header-width) var(--timeline-width) var(
+            --sidebar-width
+        );
 }
 
-.Home-grid {
-    display: grid;
-    justify-content: center;
+.Home-timeline {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
+}
 
+.Home-header {
+    font-size: var(--font-size-lg);
+    font-weight: 800;
+    border-bottom: 1px solid var(--color-background-tertiary);
     padding: var(--spacing-lg);
-
-    grid-template-columns: repeat(auto-fill, 320px);
-    grid-gap: var(--spacing-lg);
 }

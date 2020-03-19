@@ -2,30 +2,35 @@
     --spacing-xs: 2px;
     --spacing-sm: 6px;
     --spacing-md: 12px;
-    --spacing-lg: 32px;
+    --spacing-lg: 18px;
 
-    --sidebar-width: 240px;
+    --header-width: 240px;
+    --sidebar-width: 350px;
+    --timeline-width: 598px;
 
-    --font-size-xs: 1.2rem;
-    --font-size-sm: 1.3rem;
-    --font-size-md: 1.4rem;
+    --font-size-xs: 1.3rem;
+    --font-size-sm: 1.4rem;
+    --font-size-md: 1.5rem;
+    --font-size-lg: 2rem;
 
-    --color-background: #fafafa;
-    --color-background-secondary: #eee;
-    --color-background-tertiary: #ddd;
+    --color-background: #fff;
+    --color-background-secondary: rgba(246, 248, 250, 1);
+    --color-background-secondary-active: rgba(239, 242, 244, 1);
+    --color-background-tertiary: #e7ecf0;
     --color-white: #fff;
 
     --color-primary: #1f1f23;
     --color-secondary: #53535f;
     --color-shadow: rgba(0, 0, 0, 0.08);
     --color-indigo: #874bf6;
-    --color-indigo-secondary: #742ff5;
+    --color-background-indigo: rgba(102, 56, 240, 0.1);
     --color-red: #e91916;
 }
 
 html {
     font-size: 10px;
     background-color: var(--color-background);
+    height: 100%;
 }
 
 body {
@@ -35,9 +40,14 @@ body {
         'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    height: 100%;
 }
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
+}
+
+#root {
+    height: 100%;
 }

@@ -61,12 +61,13 @@ export const reducer = (state: State, action: Action) => {
 export const context = React.createContext<State>(initialState)
 
 export const getActiveFollowedStreamers = (state: State): User[] => {
-    return state.follows
-        .filter(user => Boolean(state.streamsByUserId[user.id]))
-        .sort((a, b) => {
-            const aStream = state.streamsByUserId[a.id]
-            const bStream = state.streamsByUserId[b.id]
+    return state.follows.sort((a, b) => {
+        const aStream = state.streamsByUserId[a.id]
+        const bStream = state.streamsByUserId[b.id]
 
-            return bStream.viewer_count - aStream.viewer_count
-        })
+        return (
+            (bStream ? bStream.viewer_count : 0) -
+            (aStream ? aStream.viewer_count : 0)
+        )
+    })
 }

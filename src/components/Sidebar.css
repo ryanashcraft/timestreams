@@ -1,21 +1,8 @@
 .Sidebar {
     overflow: hidden;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    border-right: 1px solid var(--color-background-tertiary);
-    background-color: var(--color-background-secondary);
+    border-left: 1px solid var(--color-background-tertiary);
     box-sizing: border-box;
-    padding: var(--spacing-md) 0;
-    width: var(--sidebar-width);
-}
-
-.Sidebar-title {
-    font-size: var(--font-size-xs);
-    padding: var(--spacing-sm) var(--spacing-md);
-    color: var(--color-primary);
-    text-transform: uppercase;
-    font-weight: 700;
+    padding: var(--spacing-lg);
 }
 
 .Sidebar-list {
@@ -25,12 +12,24 @@
     padding: 0;
 }
 
+.Sidebar-section {
+    border-radius: 16px;
+    background-color: var(--color-background-secondary);
+}
+
+.Sidebar-title {
+    font-size: var(--font-size-lg);
+    font-weight: 800;
+    padding: var(--spacing-md) var(--spacing-lg);
+    color: var(--color-primary);
+}
+
 .Sidebar-listitem {
     text-decoration: none;
     display: flex;
     align-items: center;
     overflow: hidden;
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-md);
 }
 
 .Sidebar-listitem:hover {
@@ -64,6 +63,7 @@
     white-space: nowrap;
     font-size: var(--font-size-xs);
     color: var(--color-secondary);
+    margin-top: var(--spacing-xs);
 }
 
 .Sidebar-viewercount {
