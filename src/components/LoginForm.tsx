@@ -1,5 +1,4 @@
 import React from 'react'
-import { redirectTo } from '@reach/router'
 
 import { getAccessTokenFromLocation } from '../data/access-token'
 import './LoginForm.css'
